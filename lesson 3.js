@@ -19,16 +19,42 @@ for (let i = 2; i <= n; i++) {
 //a) Организовать такой массив для хранения товаров в корзине;
 //b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
 
-var countBasketPrice = function (cart) {
-    let sum = 0;
+let cart = [
+    {
+        name: "Шоколад",
+        price: 130,
+        currency: 'RUB',
+        count: 2
+    },
+    {
+        name: "Помидоры",
+        price: 250,
+        currency: 'RUB',
+        count: 3
+    },
+    {
+        name: "Мясо",
+        price: 720,
+        currency: 'RUB',
+        count: 1
+    },
+    {
+        name: "Хлеб",
+        price: 50,
+        currency: 'RUB',
+        count: 2
+    },
+]
+
+function cartPrice(cart) {
+    let sum = 0
     for (let i = 0; i < cart.length; i++) {
-        sum += cart[i]
+        sum += cart[i].price * cart[i].count
     }
-    return sum;
+    return sum
 }
 
-let Basket = [200, 250, 400, 500, 750, 900];
-console.log('Сумма товаров в корзине ', Basket, ': ', countBasketPrice(Basket));
+console.log(cartPrice(cart))
 
 //---------------------------------------------------------------------------------------------
 
